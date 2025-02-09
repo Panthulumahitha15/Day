@@ -2,7 +2,7 @@ const febHolidays = [
    
    
     "I'm so grateful I met you❤ :)",
-    "I Love You much❤️"
+    "I Love You ❤️"
     "Thank You for existing da"
   ];
   const ulEl = document.querySelector("ul");

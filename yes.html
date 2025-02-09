@@ -3,77 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>February Calendar</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            padding: 10px;
-            margin: 5px;
-            background-color: lightgray;
-            border-radius: 5px;
-            display: inline-block;
-        }
-        li.active {
-            background-color: coral;
-            color: white;
-        }
-    </style>
+    <title>love</title>
+    <link rel="stylesheet" href="yes.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="yes.js" defer></script>
 </head>
 <body>
-    <ul></ul>
-
-    <script>
-        const febHolidays = [
-            "I'm so grateful I met you❤ :)",
-            "I Love You ❤️",
-            "Thank You for existing da"
-        ];
-
-        const ulEl = document.querySelector("ul");
-        const d = new Date();
-        let daynumber = d.getMonth() === 1 ? d.getDate() - 1 : 0;
-        let activeIndex = daynumber;
-        const rotate = -360 / febHolidays.length;
-
-        function init() {
-            febHolidays.forEach((holiday, idx) => {
-                const liEl = document.createElement("li");
-                liEl.setAttribute("data-index", idx);
-                liEl.innerHTML = `<time datetime="2022-02-${idx + 1}">${idx + 1}</time><br><span>${holiday}</span>`;
-                ulEl.append(liEl);
-            });
-
-            ulEl.style.setProperty("--rotateDegrees", rotate);
-            adjustDay(0);
-        }
-
-        function adjustDay(nr) {
-            daynumber += nr;
-            activeIndex = (activeIndex + nr + febHolidays.length) % febHolidays.length;
-
-            document.querySelectorAll("li").forEach(el => el.classList.remove("active"));
-            const newActiveEl = document.querySelector(`li[data-index="${activeIndex}"]`);
-            if (newActiveEl) {
-                newActiveEl.classList.add("active");
-            }
-        }
-
-        window.addEventListener("keydown", (e) => {
-            if (e.key === "ArrowUp") {
-                adjustDay(-1);
-            } else if (e.key === "ArrowDown") {
-                adjustDay(1);
-            }
-        });
-
-        init();
-    </script>
+    <header>
+        <h4>Just Wanna Say... I Love You❤️...I am so grateful I met You....Thank you for existing da :)</h4>
+      </header>
+      <div class="container">
+        <ul></ul>
+        <div class="controls">
+          <button onclick="adjustDay(-1)">👆</button>
+          <button onclick="adjustDay(1)">👇</button>
+        </div>
+      </div>
 </body>
 </html>
